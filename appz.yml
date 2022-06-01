@@ -1,0 +1,21 @@
+app:
+    name: python
+    code: python
+    notify: fjoy@ecloudcontrol.com
+build:
+    version: 3.7
+    env: DEV
+    build_file: none
+    output_files: output/*.zip
+    image_template: python-3.7
+    
+deploy:
+    context: apexacorp/DEV
+    replicas: 1
+    type: statefulset
+    port:
+    - 443
+    - 80
+ 
+properties:
+    revision : 1
